@@ -1,0 +1,25 @@
+{
+  "verbose": true,
+  "stream": true,
+  "input": {
+    "puller": {
+      "model": "HWPCReport",
+      "type": "mongodb",
+      "uri": "mongodb://root:example@localhost",
+      "db": "db_sensor",
+      "collection": "report_0"
+    }
+  },
+  "output": {
+    "pusher_power": {
+      "type": "influxdb",
+      "model": "PowerReport",
+      "uri": "localhost",
+      "port": 8086,
+      "db": "test",
+      "collection": "power_consuption"
+    }
+  },
+  "enable-dram-formula": false,
+  "sensor-report-sampling-interval": 500
+}
